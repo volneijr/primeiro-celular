@@ -177,9 +177,10 @@ footer a:hover{
 
 @media screen and (max-width: 1000px) {
 
-/*     .inicio, .escurecer-fundo{
+    .inicio, .escurecer-fundo{
         display: none;
-    } */
+    }
+    
     main{
         width: 100%;
     }
