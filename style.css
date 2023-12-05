@@ -1,0 +1,282 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.descricao{
+    font-size: 0.75em;
+}
+
+:root{
+    scroll-behavior: smooth;
+}
+
+nav{
+    background-color: rgb(245, 245, 245);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid darkgray;
+    filter: drop-shadow(1px 1px 2px rgb(136, 136, 136));
+    font-weight: bold;
+    z-index: 9999;
+}
+
+#menubtn{
+    margin-right: 5px;
+    padding: 5px;
+    border: none;
+    display: none;
+}
+
+.nav-logo{
+    min-width: 40%;
+    display: flex;
+    color: rgb(41, 41, 41);
+    align-items: center;
+}
+
+.nav-logo img{
+    max-width: 60px;
+}
+
+.nav-itens{
+    width: 40%;
+}
+
+.nav-itens ul{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    font-size: 0.9em;
+}
+
+.nav-itens a, .nav-itens a:hover{
+    text-decoration: none;
+    color: rgb(41, 41, 41);
+    text-transform: capitalize;
+}
+
+.nav-itens li{
+    transition: .4s;
+}
+
+.nav-itens li:hover{
+    transform: scale(1.1);
+}
+
+.inicio{
+    background-image: url(images/inicio-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.escurecer-fundo{
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(77,77,77,0.5) 100%);
+    width: 100%;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    text-align: center;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(245, 245, 245);
+    padding-bottom: 40px;
+}
+
+main{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: rgb(41, 41, 41);
+    font-weight: bold;
+}
+
+main h1{
+    margin: 40px 0 40px 0;
+    font-size: 3em;
+    text-align: center;
+}
+
+main p{
+    width: 50%;
+    margin: auto;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+.historia-img{
+    text-align: center;
+    width: 50%;
+    margin: 40px auto;
+}
+
+.historia-img img{
+    width: 100%;
+    max-width: 600px;
+}
+
+.criador{
+    width: 100%;
+}
+
+
+footer{
+    background-color: rgb(245, 245, 245);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid darkgray;
+    color: rgb(95, 95, 95);
+    font-weight:600;
+    filter: drop-shadow(1px 1px 5px rgb(136, 136, 136));
+    text-align: center;
+}
+
+footer a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+footer i{
+    padding-right: 5px;
+}
+
+footer a:hover{
+    color: rgb(41, 41, 41);
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .inicio, .escurecer-fundo{
+        display: none;
+    }
+    main{
+        width: 100%;
+    }
+
+    main p{
+        width: 90%;
+    }
+
+    .historia-img{
+        width: 80%;
+    }
+
+    .nav-itens{
+        width: 10%;
+    }
+
+    main h1, h1{
+        font-size: 1.7em;
+    }
+
+    main p{
+        font-size: 1.1em;
+    }
+
+    .nav-itens ul{
+        display: block;
+    }
+
+    ul{
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background-color: rgb(245, 245, 245);
+        height: 0;
+        z-index: 1000;
+        transition: .6s;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    .nav-itens li:hover{
+        transform: none;
+    }
+    
+    #nav.active ul{
+        display: block;
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+    
+    ul a{
+        display: block;
+        margin: 0 60px;
+        max-width: 90%;
+        border-bottom: 2px solid rgb(41, 41, 41);
+    }
+    
+    #burguer{
+        width: 20px;
+        border-top: 2px solid;
+    }
+    
+    #burguer::after, #burguer::before{
+        content: "";
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .6s;
+        position: relative;
+    
+    }
+    
+    #nav.active #burguer{
+        border-top-color: transparent;
+    }
+    
+    #nav.active #burguer::before{
+        transform: rotate(135deg);
+    }
+    
+    #nav.active #burguer::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+    #menubtn{
+        display: flex;
+        background: none;
+        cursor: pointer;
+    }
+
+    li{
+        padding: 12px 0;
+        font-size: 1.2em;
+    }
+}
