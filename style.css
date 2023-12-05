@@ -177,6 +177,10 @@ footer a:hover{
 
 @media screen and (max-width: 1000px) {
 
+    .inicio{
+        background-image: url(images/inicio-background-mobile.jpg);
+    }
+
     main{
         width: 100%;
     }
